@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply saved font scale
     const applyFontScale = (scale) => {
         currentScale = Math.max(minScale, Math.min(maxScale, scale));
-        body.style.setProperty('--font-scale', currentScale);
+        document.documentElement.style.setProperty('--font-scale', currentScale);
         localStorage.setItem('safeguard-font-scale', currentScale);
         
         // Highlight active scale button or update state indicators if needed

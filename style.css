@@ -87,7 +87,7 @@ body.high-contrast {
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base */
+    font-size: calc(16px * var(--font-scale, 1)); /* Scalable base root size */
 }
 
 body {
@@ -95,7 +95,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    font-size: calc(1.125rem * var(--font-scale)); /* Defaults to ~18px base for readability */
+    font-size: 1.125rem; /* Will scale automatically because rem is relative to html */
     transition: background-color var(--transition-speed), color var(--transition-speed), font-size 0.15s ease-out;
     padding-top: 80px; /* Offset for sticky header */
 }
@@ -421,8 +421,8 @@ body.high-contrast .control-group {
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 800;
-    width: 32px;
-    height: 32px;
+    width: 2.2rem;
+    height: 2.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
