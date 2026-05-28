@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SafeGuard - An interactive, highly accessible guide for seniors to recognize, avoid, and report online and phone scams with confidence.">
+    <title>SafeGuard | Empowering Seniors Against Scams</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for accessible icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Accessibility Toolbar & Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+                <span class="logo-text">Safe<span class="highlight">Guard</span></span>
+            </div>
+            
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="#scam-directory">Common Scams</a>
+                <a href="#scam-simulator">Interactive Quiz</a>
+                <a href="#red-flags">Red Flags</a>
+                <a href="#get-help" class="help-btn">Get Help Now</a>
+            </nav>
+
+            <div class="accessibility-panel" aria-label="Accessibility Controls">
+                <span class="panel-label"><i class="fa-solid fa-universal-access" aria-hidden="true"></i> Accessibility:</span>
+                <div class="control-group">
+                    <button id="btn-text-decrease" class="acc-btn" title="Decrease Text Size" aria-label="Decrease Text Size">A-</button>
+                    <button id="btn-text-reset" class="acc-btn" title="Reset Text Size" aria-label="Reset Text Size">100%</button>
+                    <button id="btn-text-increase" class="acc-btn" title="Increase Text Size" aria-label="Increase Text Size">A+</button>
+                </div>
+                <button id="btn-contrast-toggle" class="contrast-toggle-btn" aria-label="Toggle High Contrast Mode">
+                    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contrast
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-text-content">
+                    <span class="badge"><i class="fa-solid fa-heart-pulse"></i> Stay Confident, Stay Safe</span>
+                    <h1 id="hero-title">Your Shield Against Online Scams</h1>
+                    <p class="hero-subtitle">
+                        Online and phone scams can target anyone, at any age. You are not alone. 
+                        Let's learn how to easily spot their tricks, practice in a safe space, and gain the ultimate confidence to stay secure.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#scam-directory" class="btn btn-primary btn-large">
+                            <i class="fa-solid fa-book-open"></i> Learn Common Scams
+                        </a>
+                        <a href="#scam-simulator" class="btn btn-secondary btn-large">
+                            <i class="fa-solid fa-gamepad"></i> Try the Quiz
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <div class="shield-graphic" aria-hidden="true">
+                        <div class="outer-ring"></div>
+                        <div class="inner-shield">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="floating-bubble card-1"><i class="fa-solid fa-lock text-gold"></i> Security</div>
+                        <div class="floating-bubble card-2"><i class="fa-solid fa-phone text-green"></i> Verified</div>
+                        <div class="floating-bubble card-3"><i class="fa-solid fa-envelope-open-text text-teal"></i> Safe</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Scams Section -->
+        <section id="scam-directory" class="section-padding" aria-labelledby="directory-title">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 id="directory-title">The 5 Most Common Scams Explained</h2>
+                    <p class="section-lead">Knowledge is power. Click on any card below to see exactly how these scams work, real-world examples, and the safe way to respond.</p>
+                </div>
+
+                <div class="scam-grid" role="tablist" aria-label="Scam Types Directory">
+                    <!-- Card 1: Tech Support -->
+                    <div class="scam-card" role="tab" aria-selected="false" aria-controls="panel-tech" id="tab-tech" tabindex="0">
+                        <div class="card-icon tech-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+                        <h3>The "Tech Support" Alert</h3>
+                        <p class="card-desc">A sudden pop-up or phone call claims your computer is infected with viruses and demands payment to fix it.</p>
+                        <span class="card-action">Click to Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+
+                    <!-- Card 2: Grandchild -->
+                    <div class="scam-card" role="tab" aria-selected="false" aria-controls="panel-family" id="tab-family" tabindex="0">
+                        <div class="card-icon family-icon"><i class="fa-solid fa-person-military-to-person"></i></div>
+                        <h3>The "Grandchild in Trouble"</h3>
+                        <p class="card-desc">An urgent call from someone claiming to be your grandchild or an officer, claiming they need bail money or emergency cash immediately.</p>
+                        <span class="card-action">Click to Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+
+                    <!-- Card 3: Government Imposter -->
+                    <div class="scam-card" role="tab" aria-selected="false" aria-controls="panel-gov" id="tab-gov" tabindex="0">
+                        <div class="card-icon gov-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3>The "Government Imposter"</h3>
+                        <p class="card-desc">A caller or email claiming to be from the IRS, Social Security Admin, or Medicare threatening to suspend your account unless you pay.</p>
+                        <span class="card-action">Click to Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+
+                    <!-- Card 4: Lottery / Prize -->
+                    <div class="scam-card" role="tab" aria-selected="false" aria-controls="panel-prize" id="tab-prize" tabindex="0">
+                        <div class="card-icon prize-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <h3>The "Surprise Sweepstakes"</h3>
+                        <p class="card-desc">You are told you won a major lottery or sweepstakes, but must pay an upfront "tax" or "fee" to release your millions.</p>
+                        <span class="card-action">Click to Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+
+                    <!-- Card 5: Romance -->
+                    <div class="scam-card" role="tab" aria-selected="false" aria-controls="panel-romance" id="tab-romance" tabindex="0">
+                        <div class="card-icon romance-icon"><i class="fa-solid fa-heart"></i></div>
+                        <h3>The "Online Sweetheart"</h3>
+                        <p class="card-desc">An online acquaintance or romantic interest professes love quickly, then starts asking for money for emergencies or travel fees.</p>
+                        <span class="card-action">Click to Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+
+                <!-- Interactive Detail Container (Smooth Accordion / Explainer Panel) -->
+                <div class="explainer-panel-outer" aria-live="polite">
+                    <div id="explainer-panel" class="explainer-panel hidden">
+                        <!-- Content dynamically loaded via JS -->
+                        <div class="explainer-placeholder">
+                            <p><i class="fa-solid fa-arrow-pointer"></i> Click one of the cards above to see scam examples and response strategies!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Scam Simulator / Quiz Section -->
+        <section id="scam-simulator" class="section-padding bg-warm" aria-labelledby="simulator-title">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 id="simulator-title">Interactive Challenge: Scam or Safe?</h2>
+                    <p class="section-lead">Put your knowledge to the test! Below are real-world messages. Can you spot which ones are clever scams and which ones are safe?</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <div class="quiz-progress-bar-container">
+                            <div id="quiz-progress-fill" class="quiz-progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="quiz-meta">
+                            <span id="quiz-question-number">Question 1 of 5</span>
+                            <span id="quiz-score-badge"><i class="fa-solid fa-shield-halved"></i> Shields: 0/0</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Arena -->
+                    <div class="quiz-arena" id="quiz-arena" aria-live="assertive">
+                        <!-- Scenario Card (Dynamically updated via JS) -->
+                        <div class="scenario-card">
+                            <div class="scenario-source">
+                                <span class="source-type" id="scenario-channel-icon"><i class="fa-solid fa-comment-sms"></i></span>
+                                <span class="source-header-text" id="scenario-sender">From: Unknown Number</span>
+                            </div>
+                            <div class="scenario-body">
+                                <p id="scenario-text">"URGENT: Your Bank of America debit card has been locked due to fraudulent attempts. Click the secure link below to verify your identity and restore access immediately: secure-bofa-assist.com"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Choices -->
+                    <div class="quiz-controls" id="quiz-controls">
+                        <button id="btn-quiz-safe" class="btn btn-choice btn-safe" aria-label="Mark as Safe and Legitimate">
+                            <i class="fa-solid fa-circle-check"></i> Looks Safe
+                        </button>
+                        <button id="btn-quiz-scam" class="btn btn-choice btn-scam" aria-label="Mark as Scam/Dangerous">
+                            <i class="fa-solid fa-triangle-exclamation"></i> IT'S A SCAM!
+                        </button>
+                    </div>
+
+                    <!-- Feedback Panel -->
+                    <div id="quiz-feedback" class="quiz-feedback-panel hidden" aria-live="polite">
+                        <h4 id="feedback-title" class="feedback-title"><i class="fa-solid fa-circle-check"></i> Correct!</h4>
+                        <p id="feedback-desc">Great job! Real banks will never send security alerts with weird links like 'secure-bofa-assist.com'. They will always direct you to call the number on the back of your card.</p>
+                        <button id="btn-next-question" class="btn btn-primary">
+                            Continue <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Score Result Panel (Hidden by default) -->
+                    <div id="quiz-result" class="quiz-result-panel hidden text-center" aria-live="polite">
+                        <div class="result-badge-container">
+                            <div class="result-shield-graphic">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                        <h3 id="result-title">You're a Scam Safeguard Officer!</h3>
+                        <p id="result-desc">Fantastic score! You successfully spotted 5 out of 5 scams. You have all the skills needed to protect yourself online.</p>
+                        <div class="result-breakdown">
+                            <p class="final-score-text">Final Score: <span id="final-score-value">5 / 5</span> Shields Obtained</p>
+                        </div>
+                        <button id="btn-restart-quiz" class="btn btn-secondary">
+                            <i class="fa-solid fa-rotate-left"></i> Play Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Red Flags Section -->
+        <section id="red-flags" class="section-padding" aria-labelledby="flags-title">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 id="flags-title">The 4 Universal Scam "Red Flags"</h2>
+                    <p class="section-lead">No matter how creative scammers get, almost every single scam follows these four exact patterns. Memorize these red flags!</p>
+                </div>
+
+                <div class="flags-grid">
+                    <div class="flag-item">
+                        <div class="flag-number" aria-hidden="true">1</div>
+                        <div class="flag-content">
+                            <h3>They Pretended to be Someone Official</h3>
+                            <p>Scammers love playing roles. They will claim to be a government officer (IRS, Medicare, Social Security), your bank's fraud investigator, a support technician, or a loved one in an emergency. <strong>Always call back using a publicly listed official number.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="flag-item">
+                        <div class="flag-number" aria-hidden="true">2</div>
+                        <div class="flag-content">
+                            <h3>They Say There's an "Urgent" Problem or Prize</h3>
+                            <p>They create extreme urgency so you don't have time to think or double-check. They might say you'll get arrested, your accounts will freeze, a virus is deleting your computer files, or you won a prize but must claim it immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="flag-item">
+                        <div class="flag-number" aria-hidden="true">3</div>
+                        <div class="flag-content">
+                            <h3>They Pressure You to Pay in Specific Ways</h3>
+                            <p>Scammers want money in untraceable ways. They will demand that you buy <strong>Gift Cards</strong> (Target, Apple, Google Play), use wire transfers (Western Union), or buy Cryptocurrency. <strong>No real business or agency will ever ask for gift cards.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="flag-item">
+                        <div class="flag-number" aria-hidden="true">4</div>
+                        <div class="flag-content">
+                            <h3>They Ask You to Keep it a Secret</h3>
+                            <p>They will tell you not to tell anyone—especially your family, your bank teller, or the police. They know that if you talk to someone else, they will realize it's a scam. <strong>Always share the story with a friend first.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Checklist Card -->
+                <div class="interactive-checklist-box">
+                    <h3><i class="fa-solid fa-list-check"></i> Is someone calling, texting, or emailing you? Run this Checklist:</h3>
+                    <ul class="checklist-items">
+                        <li>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="chk-unexpected">
+                                <span class="custom-checkbox"></span>
+                                <span class="chk-label-text">Did this contact come out of the blue (unexpected)?</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="chk-urgency">
+                                <span class="custom-checkbox"></span>
+                                <span class="chk-label-text">Are they rushing me or trying to make me scared?</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="chk-giftcards">
+                                <span class="custom-checkbox"></span>
+                                <span class="chk-label-text">Are they asking for money, gift cards, or personal accounts/passwords?</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checklist-item">
+                                <input type="checkbox" id="chk-secret">
+                                <span class="custom-checkbox"></span>
+                                <span class="chk-label-text">Are they telling me to keep this conversation a secret?</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div id="checklist-result" class="checklist-alert hidden" aria-live="polite">
+                        <!-- Filled in dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Action Center Section -->
+        <section id="get-help" class="section-padding bg-navy text-white" aria-labelledby="help-title">
+            <div class="container">
+                <div class="help-layout">
+                    <div class="help-text">
+                        <h2 id="help-title">What to Do If You've Been Targeted</h2>
+                        <p class="help-intro">
+                            If you fell for a scam or shared sensitive info, <strong>don't feel ashamed</strong>. 
+                            These are professional criminals who trick thousands of people daily. Take a deep breath, and take these exact actions right now:
+                        </p>
+
+                        <div class="action-steps">
+                            <div class="step-card">
+                                <div class="step-num">1</div>
+                                <div>
+                                    <h4>Call Your Bank Instantly</h4>
+                                    <p>If you sent money, gave your credit card number, or entered your banking portal, call the card issuer or bank immediately using the phone number listed on the physical back of your card. They can freeze cards and stop transactions.</p>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-num">2</div>
+                                <div>
+                                    <h4>Change Your Passwords</h4>
+                                    <p>If you gave away a password or had a hacker lock you out, log in from a safe device, change your password, and enable Two-Factor Authentication if available.</p>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-num">3</div>
+                                <div>
+                                    <h4>Report It to the Authorities</h4>
+                                    <p>Reporting scams helps the government track criminals and alert others. It takes less than 5 minutes to submit an anonymous online report.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-contacts">
+                        <div class="contacts-card">
+                            <h3><i class="fa-solid fa-phone-volume"></i> Emergency Contacts</h3>
+                            <p class="contacts-desc">Official channels to call or report scams in the United States:</p>
+                            
+                            <ul class="contact-list">
+                                <li>
+                                    <span class="contact-name">Federal Trade Commission (FTC)</span>
+                                    <span class="contact-action-row">
+                                        <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-white">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit reportfraud.ftc.gov
+                                        </a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="contact-name">National Elder Fraud Hotline</span>
+                                    <span class="contact-action-row">
+                                        <a href="tel:18333728311" class="btn btn-sm btn-white">
+                                            <i class="fa-solid fa-phone"></i> Call 1-833-FRAUD-11 (1-833-372-8311)
+                                        </a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="contact-name">Identity Theft Protection</span>
+                                    <span class="contact-action-row">
+                                        <a href="https://identitytheft.gov" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-white">
+                                            <i class="fa-solid fa-shield-halved"></i> identitytheft.gov
+                                        </a>
+                                    </span>
+                                </li>
+                            </ul>
+                            
+                            <div class="comfort-badge">
+                                <i class="fa-solid fa-people-roof"></i>
+                                <span>Remember: You are not alone. Family, friends, and support specialists are always ready to help. Just talk to them!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <div class="logo-area" style="justify-content: center; margin-bottom: 1.5rem;">
+                <span class="logo-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+                <span class="logo-text">Safe<span class="highlight">Guard</span></span>
+            </div>
+            <p>Designed to support our elders and protect our families. Keep this site bookmarked to stay prepared!</p>
+            <p class="footer-meta">&copy; 2026 SafeGuard Education. Made with care for Meredith's educational hub.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>
